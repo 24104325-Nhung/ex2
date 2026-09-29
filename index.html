@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Springtime in Michigan</title>
+  
+  <style>
+    /* =========================================================
+       Bước 2: Tạo kiểu ẩn/hiện cho liên kết Skip Link
+       ========================================================= */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* =========================================================
+       Bước 3: Nhận xét (comment) kiểu dáng hiện có cho li
+       ========================================================= */
+    /* 
+    li {
+      list-style-type: none;
+      padding: 5px;
+    } 
+    */
+
+    /* =========================================================
+       Bước 4: Phần tử nav dùng khối nội tuyến (inline-block) & rộng 80%
+       ========================================================= */
+    nav {
+      display: inline-block;
+      width: 80%;
+    }
+
+    /* =========================================================
+       Bước 5: Bộ chọn hậu duệ định dạng ảnh trong nav (rộng 10%)
+       ========================================================= */
+    nav img {
+      width: 10%;
+    }
+
+    /* =========================================================
+       Bước 6 & 8: Lớp .grid sử dụng lưới 2 cột (mỗi cột 40%)
+       Căn chỉnh justify-content, align-items và row-gap
+       ========================================================= */
+    .grid {
+      display: grid;
+      grid-template-columns: 40% 40%;
+      justify-content: space-around;
+      align-items: center;
+      row-gap: 20px;
+    }
+
+    /* =========================================================
+       Bước 7: Bộ chọn hậu duệ định dạng ảnh trong .grid (rộng 100%)
+       ========================================================= */
+    .grid img {
+      width: 100%;
+    }
+
+    /* =========================================================
+       Bước 9: Lớp .flex sử dụng Flexbox với flex-wrap & justify-content
+       ========================================================= */
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bước 2: Thêm liên kết "Skip to Main Content" chuyển đến id="main" -->
+  <a href="#main" class="skip-link">Chuyển đến Nội dung chính</a>
+
+  <header>
+    <!-- Bước 4 & 5: Thẻ nav và cấu trúc điều hướng -->
+    <nav>
+      <!-- Ảnh trong nav sử dụng bộ chọn hậu duệ nav img (Rộng 10%) -->
+      <img src="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/images/BaconGallupPark.jpg" alt="Brown Labradoodle sitting next to a statue.">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/neighborhood.html">Neighborhood Walks</a></li>
+        <li><a href="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/parks.html">Walks in the Park</a></li>
+      </ul>
+    </nav>
+    <h1>Springtime in Michigan</h1>
+  </header>
+
+  <!-- Bước 2: Thẻ main được gắn id="main" -->
+  <main id="main">
+    <p>Springtime in <a href="https://www.michigan.org/city/ann-arbor">Ann Arbor</a> is a beautiful time. Even though
+      it can be chilly at times, it is nice to walk my dog Bacon. This site includes some pictures I have taken on
+      these walks.</p>
+
+    <p>Sometimes we walk around the neighborhood, other times we make it to the woods. Ann Arbor also has some
+      beautiful lakes and rivers including the <a href="https://www.annarbor.org/things-to-do/recreation-outdoors/huron-river/">Huron River Watertrail</a> and
+      the <a href="https://www.a2gov.org/departments/Parks-Recreation/parks-places/argo/pages/default.aspx">Argo Park Cascades</a>.</p>
+
+    <!-- Bước 6, 7 & 8: Bố cục Lưới (.grid) gồm 2 cột, mỗi cột 40%, ảnh bên trong chiếm 100% -->
+    <section class="grid">
+      <div class="grid-item">
+        <img src="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/images/BaconGallupPark.jpg" alt="Dog at Gallup Park">
+        <p>Gallup Park Walk</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/images/BaconGallupPark.jpg" alt="Dog in Neighborhood">
+        <p>Neighborhood Walk</p>
+      </div>
+    </section>
+
+    <!-- Bước 9: Bố cục Flex (.flex) -->
+    <section class="flex">
+      <div class="flex-item">
+        <img src="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/images/BaconGallupPark.jpg" alt="Huron River View" style="width: 200px;">
+        <p>Huron River</p>
+      </div>
+      <div class="flex-item">
+        <img src="https://24104325-nhung.github.io/WD4E-Intro_to_CSS3/CSS-week1-HW1/images/BaconGallupPark.jpg" alt="Argo Park View" style="width: 200px;">
+        <p>Argo Park Cascades</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>This page was originally created by Colleen van Lent for the <a href="https://www.coursera.org/specializations/web-design">Web Design for Everybody</a> Specialization.
+      Students are invited to make changes.</p>
+  </footer>
+
+</body>
+</html>
